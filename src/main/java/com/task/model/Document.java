@@ -1,7 +1,9 @@
 package com.task.model;
 
 import javax.persistence.*;
+import java.util.UUID;
 
+@Table
 @Entity
 public class Document {
     @Id
@@ -9,11 +11,21 @@ public class Document {
 
 
     @Column(unique = true)
-    private Long uuid;
+    private UUID uuid;
+    @Column(unique = true)
     private String document;
 
 
-    public Long getUuid() {
+    public Document() {
+    }
+
+    public Document(UUID uuid, String document) {
+        this.uuid = uuid;
+        this.document = document;
+    }
+
+
+    public UUID getUuid() {
         return uuid;
     }
 
@@ -21,7 +33,7 @@ public class Document {
         return document;
     }
 
-    public void setUuid(Long uuid) {
+    public void setUuid(UUID uuid) {
         this.uuid = uuid;
     }
 

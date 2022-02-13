@@ -1,6 +1,8 @@
 package com.task.controller;
 
+import com.task.model.Document;
 import com.task.repository.DocumentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -18,11 +20,13 @@ public class DocumentContoller {
         //place a post request with uuid and find a doc in the database and return it
         return "get your document here";
     };
+
+    @Autowired
+    DocumentRepository repository;
     @PostMapping("/createID")
     public UUID createID(String input) {
          UUID uuid=UUID.randomUUID();
-        DocumentRepository.save
-         //TODO store the value in the database
+        repository.save(new Document(uuid, "abc"));
          return uuid;
 
     }
