@@ -18,7 +18,6 @@ public class DocumentServiceImpl implements DocumentService {
 
     @Override
     public Document createDocument(Document doc) {
-        newDocument.setDocument(doc.getDocument());
         newDocument.setUuid(createUuid());
         return repo.save(newDocument);
     }
