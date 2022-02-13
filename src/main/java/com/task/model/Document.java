@@ -8,22 +8,17 @@ import java.util.UUID;
 public class Document {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
-
     @Column(unique = true)
     private UUID uuid;
     @Column(unique = true)
     private String document;
 
-
-    public Document() {
-    }
+    public Document() {}
 
     public Document(UUID uuid, String document) {
         this.uuid = uuid;
         this.document = document;
     }
-
 
     public UUID getUuid() {
         return uuid;
