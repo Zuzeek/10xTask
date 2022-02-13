@@ -11,7 +11,7 @@ import java.util.UUID;
 @Service
 public class DocumentServiceImpl implements DocumentService {
 
-    @Autowired
+//    @Autowired
     DocumentRepository repo;
 
     Document newDocument = new Document();

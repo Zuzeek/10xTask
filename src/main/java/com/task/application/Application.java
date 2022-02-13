@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import java.util.UUID;
 
 @SpringBootApplication
-//@ComponentScan(basePackages = "com.task")
-//@EnableJpaAuditing
+@ComponentScan(basePackages = "com.task")
+@EnableJpaAuditing
 public class Application {
 
 	public static void main(String[] args) {

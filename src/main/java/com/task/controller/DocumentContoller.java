@@ -11,7 +11,6 @@ import java.util.UUID;
 
 @RestController
 public class DocumentContoller {
-    @Autowired
     DocumentService docService;
 
     @GetMapping("/docs")
@@ -19,20 +18,20 @@ public class DocumentContoller {
         return docService.getAllDocuments();
     }
 
-    @GetMapping(path = "id/{id}",
+    @GetMapping(value = "id/{id}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public Document getDocByUuid (@PathVariable(value = "id") UUID id) throws Exception {
         return docService.getDocumentById(id);
     }
 
-    @PostMapping(path = "/id")
+    @PostMapping(value = "/id")
     public UUID createId () {
          UUID uuid = docService.createUuid();
          return uuid;
     }
 
-    @PutMapping(path = "/updateDoc",
+    @PutMapping(value = "/updateDoc",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public  String updateById(String input) {
