@@ -11,10 +11,10 @@ public class Document {
     @Column(unique = true)
     private Long id;
 
-    @Column
+    @Column(name = "uuid")
     private UUID uuid;
 
-    @Column(unique = true)
+    @Column(unique = true, name = "document_url")
     private String document;
 
     public Document() {}

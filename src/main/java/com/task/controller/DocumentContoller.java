@@ -2,15 +2,16 @@ package com.task.controller;
 
 import com.task.model.Document;
 import com.task.service.DocumentService;
-import org.springframework.web.bind.annotation.*;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
 
 @RestController
 public class DocumentContoller {
+    @Autowired
     DocumentService docService;
 
     @GetMapping("/docs")

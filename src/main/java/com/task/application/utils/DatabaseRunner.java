@@ -6,10 +6,9 @@ import com.task.service.DocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 
-import java.util.UUID;
-
 public class DatabaseRunner implements CommandLineRunner {
 
+    @Autowired
     DocumentRepository repo;
 
     @Autowired

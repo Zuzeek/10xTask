@@ -1,6 +1,8 @@
+package com.task.service;
+
 import com.task.model.Document;
 import com.task.repository.DocumentRepository;
-import com.task.service.DocumentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.UUID;
 @Service
 public class DocumentServiceImpl implements DocumentService {
 
+    @Autowired
     DocumentRepository repo;
 
     Document newDocument = new Document();
