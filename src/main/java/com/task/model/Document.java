@@ -1,20 +1,22 @@
 package com.task.model;
 
+import com.sun.istack.NotNull;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
 import java.util.UUID;
 
-@Table
+@Table(name = "documents")
 @Entity
 public class Document {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
-
-    @Column(unique = true)
+    @Column(unique = true, name = "id")
+    @NotNull
     private UUID uuid;
+
     @Column(unique = true)
     private String document;
-
 
     public Document() {
     }
