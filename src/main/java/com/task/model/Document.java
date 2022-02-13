@@ -1,15 +1,17 @@
 package com.task.model;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 import java.util.UUID;
 
 @Table
 @Entity
+@Component ("Document")
 public class Document {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
-
+    private Long id;
     @Column(unique = true)
     private UUID uuid;
     @Column(unique = true)
