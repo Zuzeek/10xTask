@@ -10,28 +10,34 @@ import java.util.UUID;
 @Entity
 //@EntityListeners(AuditingEntityListener.class)
 public class Document {
+<<<<<<< HEAD
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+=======
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+>>>>>>> ag
     @Column(unique = true)
     private UUID uuid;
     @Column(unique = true)
     private String document;
 
-
-    public Document() {
-    }
+    public Document() {}
 
     public Document(UUID uuid, String document) {
         this.uuid = uuid;
         this.document = document;
     }
 
+<<<<<<< HEAD
     public Long getId() {
         return id;
     }
+=======
+>>>>>>> ag
     public UUID getUuid() {
         return uuid;
     }

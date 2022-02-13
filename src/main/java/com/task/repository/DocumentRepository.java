@@ -7,7 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ag
 @Repository
 public interface DocumentRepository extends CrudRepository<Document, UUID> {
 
