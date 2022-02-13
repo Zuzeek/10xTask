@@ -3,13 +3,17 @@ package com.task.model;
 import javax.persistence.*;
 import java.util.UUID;
 
-@Table (name = "Documents")
+@Table (name = "documents")
 @Entity
 public class Document {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true)
+    private Long id;
+
+    @Column
     private UUID uuid;
+
     @Column(unique = true)
     private String document;
 
