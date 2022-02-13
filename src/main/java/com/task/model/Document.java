@@ -1,14 +1,17 @@
 package com.task.model;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.UUID;
 
-@Table
+@Table (name = "Documents")
 @Entity
-@Component ("Document")
+//@EntityListeners(AuditingEntityListener.class)
 public class Document {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -26,13 +29,19 @@ public class Document {
         this.document = document;
     }
 
-
+    public Long getId() {
+        return id;
+    }
     public UUID getUuid() {
         return uuid;
     }
 
     public String getDocument() {
         return document;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setUuid(UUID uuid) {
